@@ -4,6 +4,8 @@
 ### Strumenti definiti
 Gestione delle attività TRELLO (link disponibile nel gruppo telegram del team)
 
+Gestione del Wireframe
+![Wireframe](wireframeboo.svg "Wireframe - Bozza")
 ---
 ### Strumenti utili
 
