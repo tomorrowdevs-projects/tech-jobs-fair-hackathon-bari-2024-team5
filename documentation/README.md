@@ -5,7 +5,7 @@
 Gestione delle attività TRELLO (link disponibile nel gruppo telegram del team)
 
 Gestione del Wireframe
-![Wireframe](wireframeboo.svg "Wireframe - Bozza")
+![Wireframe](wireframeboo.jpg "Wireframe - Bozza")
 ---
 ### Strumenti utili
 
