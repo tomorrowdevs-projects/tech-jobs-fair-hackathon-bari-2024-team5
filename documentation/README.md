@@ -1,5 +1,11 @@
 
-## Tools
+# Tools
+
+### Strumenti definiti
+Gestione delle attività TRELLO (link disponibile nel gruppo telegram del team)
+
+---
+### Strumenti utili
 
 Gli strumenti che sicuramente serviranno sono :
 - Editor per scrivere codice (vscode,sublime text,Visual studio,pycharm per python,PHPStorm per php ecc...  )
