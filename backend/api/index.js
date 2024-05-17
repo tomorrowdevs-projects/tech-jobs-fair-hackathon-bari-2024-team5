@@ -1,28 +1,13 @@
 import Fastify from 'fastify'
 import cors from '@fastify/cors'
 import mongoose from 'mongoose'
-
-
-
-/*
-const route = require('./routes/noteRoutes');
-*/
+import { get_match_playerSchema } from './models/MatchPlayer.js'
 
 
 const connString = "mongodb+srv://francescoricci:techjf@cluster0.3rl1hug.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 //const connString = 'mongodb://127.0.0.1:27017/quizdb'
 
-const { Schema } = mongoose;
-
-const match_playerSchema = new Schema({
-    id_match : {type: Number },
-    mail : {type : String, required : true},
-    answer_total : {type : Number, required : true},
-    answer_correct : {type : Number, required : true},
-    timesec_ex : {type : Number, required : true}
-});
-
-const MatchPlayer = mongoose.model('match_playerTable' , match_playerSchema);
+const MatchPlayer = mongoose.model('match_playerTable' , get_match_playerSchema());
 
 const fastify = Fastify({
   logger: true
