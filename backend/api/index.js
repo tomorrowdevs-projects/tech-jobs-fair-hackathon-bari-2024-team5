@@ -2,6 +2,13 @@ import Fastify from 'fastify'
 import cors from '@fastify/cors'
 import mongoose from 'mongoose'
 
+
+
+/*
+const route = require('./routes/noteRoutes');
+*/
+
+
 const connString = "mongodb+srv://francescoricci:techjf@cluster0.3rl1hug.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 //const connString = 'mongodb://127.0.0.1:27017/quizdb'
 
@@ -65,6 +72,20 @@ fastify.get('/api/players_pendings', async (request, reply) => {
 
 });
 
+
+fastify.get('/api/triva_answer', async (request, reply) => {
+    
+    try {
+        const tribiajson = await loadQuestionTribia();
+        reply.code(200).send(tribiajson);
+    } catch (error) {
+        reply.code(500).send(error)
+    }
+
+});
+
+
+
 fastify.post('/api/match_player', async (request, reply) => {
     
     //let result = {};
@@ -93,3 +114,30 @@ fastify.listen({ port: 3000 }, (err, address) => {
     }
     console.log(`Server listening at: ${address}`);
 });
+
+
+
+
+async function loadQuestionTribia() {
+    // all category
+    // const APIUrl = 'https://opentdb.com/api.php?amount=1'
+    // only category computer science 18
+    const APIUrl = 'https://opentdb.com/api.php?amount=10&category=18'
+    const result = await fetch(`${APIUrl}`);
+    const data = await result.json();
+
+    // data contains response_code to value 0
+    // data contains results array (length by amount parameter value)
+
+    for (const iterator of data.results) {
+        delete iterator.correct_answer;
+        delete iterator.incorrect_answers;
+        console.log(iterator); 
+    }
+
+    return data;
+    
+}
+
+
+
