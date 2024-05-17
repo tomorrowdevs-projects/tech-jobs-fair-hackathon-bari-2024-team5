@@ -70,7 +70,7 @@ fastify.get('/api/players_pendings', async (request, reply) => {
 
 });
 
-fastify.get('/api/triva_answer', async (request, reply) => {
+fastify.get('/api/trivia_answer', async (request, reply) => {
     
     try {
         const tribiajson = await loadQuestionTribia();
