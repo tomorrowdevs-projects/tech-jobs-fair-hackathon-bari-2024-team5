@@ -8,7 +8,7 @@ const _option = document.querySelector('.quiz-options')
 const _correctStore = document.getElementById('correct-store');
 const _totalQuestion = document.getElementById('total-question');
 
-let correctAnswer = 0, correctStore = 0, totalQuestion = 3;
+let correctAnswer = 0, correctStore = 1, totalQuestion = 3;
 
 document.addEventListener('DOMContentLoaded' , () => {
     loadQuestion();
